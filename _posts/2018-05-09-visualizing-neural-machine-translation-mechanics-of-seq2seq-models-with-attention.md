@@ -3,7 +3,7 @@ layout: prediction_post
 published: True
 title: Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
 ---
-<span class="discussion">Translations: <a href="https://blog.csdn.net/qq_41664845/article/details/84245520">Chinese (Simplified)</a>, <a href="https://tips-memo.com/translation-jayalmmar-attention">Japanese</a>, <a href="https://nlpinkorean.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">Korean</a>, <a href="https://habr.com/ru/post/486158/">Russian</a>, <a href="https://medium.com/@SenemAktas/n%C3%B6ral-makine-%C3%A7eviri-modelini-g%C3%B6rselle%C5%9Ftirme-seq2seq-modelinin-attention-mekanizmas%C4%B1-b12581b5a1df">Turkish</a></span>
+<span class="discussion">Translations: <a href="https://blog.csdn.net/qq_41664845/article/details/84245520">Chinese (Simplified)</a>, <a href="https://lbourdois.github.io/blog/nlp/Seq2seq-et-attention/">French</a>, <a href="https://tips-memo.com/translation-jayalmmar-attention">Japanese</a>, <a href="https://nlpinkorean.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">Korean</a>, <a href="http://dml.qom.ac.ir/2021/10/03/visualizing-a-neural-machine-translation-model/">Persian</a>, <a href="https://habr.com/ru/post/486158/">Russian</a>, <a href="https://medium.com/@SenemAktas/n%C3%B6ral-makine-%C3%A7eviri-modelini-g%C3%B6rselle%C5%9Ftirme-seq2seq-modelinin-attention-mekanizmas%C4%B1-b12581b5a1df">Turkish</a></span>
 <br />
 <span class="discussion">Watch: MIT's <a href="https://youtu.be/53YvP6gdD7U?t=335">Deep Learning State of the Art</a> lecture referencing this post</span>
 
@@ -105,7 +105,7 @@ Let's look at the <span class="context">hidden states</span>  for the <span clas
 
 <br />
 
-The <span class="decoder">decoder</span>  also maintains a <span class="decoder">hidden states</span>  that it passes from one time step to the next. We just didn't visualize it in this graphic because we're concerned with the major parts of the model for now.
+The <span class="decoder">decoder</span>  also maintains a <span class="decoder">hidden state</span>  that it passes from one time step to the next. We just didn't visualize it in this graphic because we're concerned with the major parts of the model for now.
 
 
 Let's now look at another way to visualize a sequence-to-sequence model. This animation will make it easier to understand the static graphics that describe these models. This is called an "unrolled" view where instead of showing the one <span class="decoder">decoder</span>, we show a copy of it for each time step. This way we can look at the inputs and outputs of each time step.
@@ -145,9 +145,9 @@ First, the <span class="encoder">encoder</span> passes a lot more data to the <s
 
 Second, an attention <span class="decoder">decoder</span>  does an extra step before producing its output. In order to focus on the parts of the input that are relevant to this decoding time step, the <span class="decoder">decoder</span>  does the following:
 
- 1. Look at the set of encoder <span class="context">hidden states</span>  it received -- each <span class="context">encoder hidden states</span>  is most associated with a certain word in the input sentence
- 1. Give each <span class="context">hidden states</span>  a score (let's ignore how the scoring is done for now)
- 1. Multiply each <span class="context">hidden states</span>  by its softmaxed score, thus amplifying <span class="context">hidden states</span>  with high scores, and drowning out <span class="context">hidden states</span>  with low scores
+ 1. Look at the set of encoder <span class="context">hidden states</span>  it received -- each <span class="context">encoder hidden state</span>  is most associated with a certain word in the input sentence
+ 1. Give each <span class="context">hidden state</span>  a score (let's ignore how the scoring is done for now)
+ 1. Multiply each <span class="context">hidden state</span>  by its softmaxed score, thus amplifying <span class="context">hidden states</span>  with high scores, and drowning out <span class="context">hidden states</span>  with low scores
 
 
 <video width="100%" height="auto" loop autoplay controls>

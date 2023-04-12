@@ -9,7 +9,7 @@ title: The Illustrated Word2vec
 </span>
 <br />
 <span class="discussion">
-Translations: <a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQzNzU2NA==&mid=2651669277&idx=2&sn=bc8f0590f9e340c1f1359982726c5a30&chksm=bd4c648e8a3bed9817f30c5a512e79fe0cc6fbc58544f97c857c30b120e76508fef37cae49bc&scene=0&xtrack=1#rd">Chinese (Simplified)</a>, <a href="https://databreak.netlify.com/2019-04-25-illustrated_word2vec/">Korean</a>, <a href="https://pessoalex.wordpress.com/2019/03/29/o-word2vec-ilustrado/">Portuguese</a>, <a href="https://habr.com/ru/post/446530/">Russian</a>
+Translations: <a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQzNzU2NA==&mid=2651669277&idx=2&sn=bc8f0590f9e340c1f1359982726c5a30&chksm=bd4c648e8a3bed9817f30c5a512e79fe0cc6fbc58544f97c857c30b120e76508fef37cae49bc&scene=0&xtrack=1#rd">Chinese (Simplified)</a>, <a href="https://lbourdois.github.io/blog/nlp/word_embedding/">French</a>, <a href="https://databreak.netlify.com/2019-04-25-illustrated_word2vec/">Korean</a>, <a href="https://pessoalex.wordpress.com/2019/03/29/o-word2vec-ilustrado/">Portuguese</a>, <a href="https://habr.com/ru/post/446530/">Russian</a>
 </span>
 
 
@@ -34,6 +34,10 @@ Translations: <a href="https://mp.weixin.qq.com/s?__biz=MjM5MTQzNzU2NA==&mid=265
 
 
 I find the concept of embeddings to be one of the most fascinating ideas in machine learning. If you've ever used Siri, Google Assistant, Alexa, Google Translate, or even smartphone keyboard with next-word prediction, then chances are you've benefitted from this idea that has become central to Natural Language Processing models. There has been quite a development over the last couple of decades in using embeddings for neural models (Recent developments include contextualized word embeddings leading to cutting-edge models like [BERT](https://jalammar.github.io/illustrated-bert/) and GPT2).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ISPId9Lhc1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  style="
+width: 100%;
+max-width: 560px;" allowfullscreen></iframe>
 
 Word2vec is a method to efficiently create word embeddings and has been around since 2013. But in addition to its utility as a word-embedding method, some of its concepts have been shown to be effective in creating recommendation engines and making sense of sequential data even in commercial, non-language tasks. Companies like [Airbnb](https://www.kdd.org/kdd2018/accepted-papers/view/real-time-personalization-using-embeddings-for-search-ranking-at-airbnb), [Alibaba](https://www.kdd.org/kdd2018/accepted-papers/view/billion-scale-commodity-embedding-for-e-commerce-recommendation-in-alibaba), [Spotify](https://www.slideshare.net/AndySloane/machine-learning-spotify-madison-big-data-meetup), and [Anghami](https://towardsdatascience.com/using-word2vec-for-music-recommendations-bb9649ac2484) have all benefitted from carving out this brilliant piece of machinery from the world of NLP and using it in production to empower a new breed of recommendation engines.
 
@@ -710,7 +714,7 @@ Two key hyperparameters in the word2vec training process are the window size and
   <br />  
 </div>
 
-Different tasks are served better by different window sizes. One [heuristic](https://youtu.be/tAxrlAVw-Tk?t=648) is that smaller window sizes (2-15) lead to embeddings where high similarity scores between two embeddings indicates that the words are *interchangeable* (notice that antonyms are often interchangable if we're only looking at their surrounding words -- e.g. *good* and *bad* often appear in similar contexts). Larger window sizes (15-50, or even more) lead to embeddings where similarity is more indicative of *relatedness* of the words. In practice, you'll often have to provide [annotations](https://youtu.be/ao52o9l6KGw?t=287) that guide the embedding process leading to a useful similarity sense for your task. The Gensim default window size is 5 (two words before and two words after the input word, in addition to the input word itself).
+Different tasks are served better by different window sizes. One [heuristic](https://youtu.be/tAxrlAVw-Tk?t=648) is that smaller window sizes (2-15) lead to embeddings where high similarity scores between two embeddings indicates that the words are *interchangeable* (notice that antonyms are often interchangable if we're only looking at their surrounding words -- e.g. *good* and *bad* often appear in similar contexts). Larger window sizes (15-50, or even more) lead to embeddings where similarity is more indicative of *relatedness* of the words. In practice, you'll often have to provide [annotations](https://youtu.be/ao52o9l6KGw?t=287) that guide the embedding process leading to a useful similarity sense for your task. The Gensim default window size is 5 (five words before and five words after the input word, in addition to the input word itself).
 
 
 <div class="img-div" markdown="0">
